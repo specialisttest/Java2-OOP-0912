@@ -23,5 +23,6 @@ public abstract class Shape { // extends Object
 	}
 	
 	public abstract void draw();
+	//public abstract void scale(double factor);
 	
 }
