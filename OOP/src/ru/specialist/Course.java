@@ -2,7 +2,7 @@ package ru.specialist;
 
 import java.util.Objects;
 
-public class Course {
+public class Course implements Cloneable {
 	// константы - значения определены на этапе компиляции
 	public static final String DEFAULT_TITLE = "Новый курс";
 	public static final int DEFAULT_LENGTH = 8;
@@ -61,6 +61,10 @@ public class Course {
 		// любый другие действия (почти ))
 		//Course.counter++;
 		counter++;
+	}
+	
+	public Course(Course c) {
+		this(c.getTitle(), c.getLength(), c.organization);
 	}
 	
 	// private boolean checked;
@@ -128,6 +132,11 @@ public class Course {
 		System.out.printf("%s. %s : %d\n", getCode(), getTitle() , this.getLength());
 	}
 	
+	@Override
+	public String toString() {
+		return String.format("%s : %d\n", getTitle() , this.getLength());
+	}
+	
 	
 	@Override
 	public boolean equals(Object o) {
@@ -135,7 +144,9 @@ public class Course {
 		if (this == o) return true;
 		if (o == null) return false;
 		
-		if (getClass() != o.getClass()) return false;
+		// точное сравнение типов
+		if (this.getClass() != o.getClass()) return false;
+		//if (o.getClass() != Course.class) return false;
 		
 		Course c = (Course)o;
 		return this.getTitle().equals(c.getTitle()) &&
@@ -158,6 +169,10 @@ public class Course {
 		return Objects.hash(getTitle(), getLength(), getTeacher(), this.organization);
 	}
 
+	@Override
+	public Course clone() {
+		return new Course(this);
+	}
 	
 	
 }

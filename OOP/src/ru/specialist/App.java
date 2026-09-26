@@ -56,13 +56,49 @@ public class App {
 		System.out.println( c5 == c6 ); // сравнение ссылок (только identity)
 		System.out.println( c5.equals(c6) ); // сравнение по полям
 		
-		System.out.println( c5.hashCode() );
-		System.out.println( c6.hashCode() );
+		//System.out.println( c5.hashCode() );
+		//System.out.println( c6.hashCode() );
+		
+		//System.out.println(c1);
 		
 		//var str1 = new String("abc");
 		//var str2 = new String("abc");
 		//System.out.println( str1 == str2 ); 
 		//System.out.println( str1.equals(str2) );
+		
+		// value type
+		{
+			int a = 10;
+			int b = a; // копирование значения
+			a++;
+			System.out.printf("a = %d b = %d\n", a, b);
+		}
+		
+		// reference type
+		{
+			var c7 = new Course("GIT Intro", 16);
+			var c8 = c7; // копирование ссылки на объект
+			
+			System.out.println( c7 == c8 ); // две ссылки на один тот же объект
+			
+			c7.setLength(24);
+			
+			c7.print();
+			c8.print();
+		}
+		
+		// reference type (clone)
+		{
+			var c7 = new Course("GIT Intro", 16);
+			var c8 = c7.clone(); // клонирование объекта
+			
+			System.out.println( c7 == c8 ); // две ссылки на один тот же объект
+			
+			c7.setLength(24);
+			
+			c7.print();
+			c8.print();
+		}
 		
 		
 		
