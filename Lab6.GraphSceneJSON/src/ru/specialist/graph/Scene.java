@@ -21,6 +21,7 @@ public class Scene implements SerializableToJSON {
 	
 	public void sort() {
 		Arrays.sort(shapes, 0, shapesCounter);
+		// Collections.sort()
 	}
 	
 	public void draw() {
