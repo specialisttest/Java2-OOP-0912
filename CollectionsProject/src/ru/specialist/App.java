@@ -40,6 +40,26 @@ public class App {
 //			Course c = iter.next();
 //			out.println( c );
 //		}
+		out.println("------ Courses ------");
+		for(Course c : courses)
+			out.println(c);
+		
+		/*Collections.sort(courses, new Comparator<Course>() {
+			public int compare(Course c1, Course c2) {
+				return c1.getLength() - c2.getLength();
+		}});*/
+		/*Collections.sort(courses, new Comparator<Course>() {
+			public int compare(Course c1, Course c2) {
+				return c1.getTitle().compareTo(c2.getTitle());
+		}});*/
+		
+		Collections.sort(courses, (c1, c2) -> c1.getTitle().compareTo(c2.getTitle()) );
+		//Collections.sort(courses, (c1, c2) -> c1.getLength() - c2.getLength() );
+		
+		//Collections.sort(courses, (c1, c2) -> App.compareCourse(c1, c2) );
+		Collections.sort(courses, App::compareCourse );
+		
+		out.println("----Sorted Courses ------");
 		for(Course c : courses)
 			out.println(c);
 		
@@ -57,7 +77,7 @@ public class App {
 //				(o1,o2) -> App.compareCourse(o1, o2) );
 /*		Collections.sort(courses, App::compareCourse );
 
-		
+	*/	
 		
 		out.println(courses.size()); // 4
 		
@@ -83,6 +103,7 @@ public class App {
 //			out.printf("key: %s value: %s\n", c, coursesToTeacher.get(c));
 		
 		//for(Map.Entry<Course,String> pair :  coursesToTeacher.entrySet())
+		//Set<Map.Entry<Course, String>> pairsSet =  coursesToTeacher.entrySet()
 		for(var pair :  coursesToTeacher.entrySet())
 			out.printf("key: %s value: %s\n", pair.getKey(), pair.getValue());
 		
@@ -105,7 +126,7 @@ public class App {
 				out.printf("\t%s\n", teacher);
 		}
 			
-*/
+
 		
 		
 

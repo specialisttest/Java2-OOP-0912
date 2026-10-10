@@ -1,13 +1,13 @@
 package ru.specialist;
 
-// class Colors extends Enum<Colors>
+
 enum Colors {
 	Red(0xFF, 0x00, 0x00), 
 	Green(0x00, 0xFF, 0x00),
 	Blue(0x00, 0x00, 0xFF),
 	Yellow(0x00, 0xFF, 0xFF),
 	White(0xFF, 0xFF, 0xFF),
-	Black(0x00, 0x00, 0x00);
+	Black;
 	
 	private int red, green, blue;
 	
@@ -28,6 +28,9 @@ enum Colors {
 		return String.format("#%h%h%h", 255-red, 255-green, 255-blue);
 	}
 }
+
+//class Colors extends Enum<Colors>
+//enum Colors { Red, Green, Blue }
 
 public class App {
 	

@@ -22,38 +22,38 @@ public class App {
 	
 	public static void main(String[] args) {
 		
+		out.println( isGreater(5, 6));
+		out.println( isGreater(2.5, 6.1));
+		out.println( isGreater("abc", "cde"));
+		
 		out.println ( App.<Integer>isGreater(11, 6) );
-		out.println ( isGreater(2.5, 6.1) );
-		out.println ( isGreater("abc", "cde") );
 		
-		
-		Pair<Integer> p1 = new Pair<Integer>(5, 6);
-		
-		//Pair<Double> p2 = new Pair<Double>(2.5, 6.1);
-		var p2 = new Pair<Double>(2.5, 6.1);
-		
-		//Pair<String> p3 = new Pair<String>("abc", "cde");
-		Pair<String> p3 = new Pair<>("abc", "cde");
-		
-		//Pair<App> p33 = new Pair<App>("abc", "cde");
-		
-		Pair2<String, Integer> p4 = new Pair2<String, Integer>("abc", 56);
-		
-		//Pair2<Object, Object> p5 = new Pair2<Object, Object>("abc", 56);
-		Pair2 p5 = new Pair2("abc", 56); // raw type
-		
-		
+		Pair<Integer> p1 = new Pair<Integer>(6, 5);
+		out.printf("%d %d\n", p1.getX(), p1.getY());
 		out.printf("%d\n", p1.getX() * p1.getY());
 		out.printf("%s\n", p1.isGreater());
 		
-		out.printf("(%d, %d)\n", p1.getX(), p1.getY());
+		//Pair<Double> p2 = new Pair<Double>(2.5, 6.1);
+		var p2 = new Pair<Double>(2.5, 6.1);
+		out.printf("%f %f\n", p2.getX(), p2.getY());
 		
-		out.printf("(%f, %f)\n", p2.getX(), p2.getY());
-		out.printf("(%s, %s)\n", p3.getX(), p3.getY());
+		//Pair<String> p3 = new Pair<String>("abc", "cde");
+		Pair<String> p3 = new Pair<>("abc", "cde");
+		out.printf("%s %s\n", p3.getX(), p3.getY());
 		
-		out.printf("(%s, %d)\n", p4.getX(), p4.getY());
+		// type check
+		// Pair<App> p33 = new Pair<App>(new App(), "cde");
+		//Pair<App> p33 = new Pair<App>(new App(), new App());
 		
 		
+		Pair2<String, Integer> p4 = new Pair2<String, Integer>("abc", 56);
+		out.printf("%s %d\n", p4.getX(), p4.getY());
+		
+		//Pair<Object> p5 = new Pair<Object>("abc", 56);
+		Pair p5 = new Pair("abc", 56); // raw type
+		
+		
+
 
 	}
 

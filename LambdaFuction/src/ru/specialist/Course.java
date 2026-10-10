@@ -2,8 +2,7 @@ package ru.specialist;
 
 import java.util.Objects;
 
-public class Course 
-{
+public class Course {
 	public static final String DEFAULT_TITLE = "Новый курс";
 	public static final int DEFAULT_LENGTH = 8;
 	public static final int MAX_LENGTH = 60;
@@ -11,8 +10,6 @@ public class Course
 	
 	private String title;
 	private int length;
-	
-	public String title() {return title;} 
 	
 	public int getLength() {
 		return length;
@@ -69,4 +66,5 @@ public class Course
 		return Objects.hash(getTitle(), getLength());
 	}
 	
+
 }
